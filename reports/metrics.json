@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "data": {
+    "rows": 4244,
+    "first_date": "2010-01-04",
+    "last_date": "2026-11-16",
+    "sha256": "28a02fb5b1853aa3bc14436055fc84837a45fbfd53be70c725db4f6241670b59"
+  },
+  "settings": {
+    "min_train": 756,
+    "validation_size": 252,
+    "step": 252,
+    "gap": 5,
+    "test_size": 252,
+    "horizon": 5,
+    "lookback": 63,
+    "ewma_decay": 0.94,
+    "seed": 42,
+    "calendar_features": "weekday only",
+    "dm_lag": 4
+  },
+  "library_versions": {
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "scikit_learn": "1.9.1",
+    "yfinance": "1.8.0"
+  },
+  "implementation_sha256": "2cf39a84f07453184f9995950c72c75772ddd200673abad63a2bed5f8e111b20",
+  "feature_count": 34,
+  "splits": {
+    "modelling_rows": 4176,
+    "development_rows": 3919,
+    "development_start": "2010-04-06",
+    "development_end": "2025-10-30",
+    "purge_start": "2025-10-31",
+    "purge_end": "2025-11-06",
+    "test_start": "2025-11-07",
+    "test_end": "2026-11-09",
+    "test_rows": 252,
+    "test_label_end": "2026-11-16",
+    "fold_count": 12,
+    "development_tail_rows_outside_complete_folds": 134
+  },
+  "metric_units": {
+    "qlike": "dimensionless loss on variance",
+    "mae": "annualised volatility percentage points",
+    "rmse": "annualised volatility percentage points"
+  },
+  "selection_metric": "mean development QLIKE",
+  "chosen_parameters": {
+    "learning_rate": 0.03,
+    "max_iter": 100,
+    "max_leaf_nodes": 16,
+    "min_samples_leaf": 50
+  },
+  "fold_means": {
+    "ewma": {
+      "qlike": 0.5574374535739762,
+      "rmse": 7.8928093230147445,
+      "mae": 5.515999086087359
+    },
+    "har": {
+      "qlike": 0.6562531731602442,
+      "rmse": 7.610207756059963,
+      "mae": 4.9282177966113645
+    },
+    "hgb": {
+      "qlike": 0.539333972656433,
+      "rmse": 7.228647735056121,
+      "mae": 4.615635204355369
+    },
+    "prev_5": {
+      "qlike": 1.0653813491542397,
+      "rmse": 8.177143191388268,
+      "mae": 5.6361512632337005
+    },
+    "rv_21": {
+      "qlike": 0.6463232964700761,
+      "rmse": 8.159383624000903,
+      "mae": 5.61395509030697
+    }
+  },
+  "best_baseline_by_development_qlike": "ewma",
+  "win_counts": {
+    "folds": 12,
+    "hgb_vs_ewma": 8,
+    "hgb_vs_best_baseline_in_each_fold": 8
+  },
+  "regime_cutoffs": {
+    "low_upper": 0.08733802306505907,
+    "medium_upper": 0.14999844822451774
+  },
+  "candidate_count": 16,
+  "test_scores": {
+    "prev_5": {
+      "qlike": 0.8386694074563794,
+      "mae": 4.803302748728493,
+      "rmse": 6.786761311549197
+    },
+    "rv_21": {
+      "qlike": 0.5178806066346906,
+      "mae": 4.651125568253294,
+      "rmse": 6.351869807233945
+    },
+    "ewma": {
+      "qlike": 0.46333586049805586,
+      "mae": 4.4232753551877755,
+      "rmse": 6.047373130593922
+    },
+    "har": {
+      "qlike": 0.54276331972894,
+      "mae": 4.066523465314955,
+      "rmse": 5.955597738022559
+    },
+    "hgb": {
+      "qlike": 0.4049288879915977,
+      "mae": 3.5731256686274735,
+      "rmse": 5.286753642412865
+    }
+  },
+  "error_by_regime": {
+    "low": {
+      "rows": 68,
+      "models": {
+        "prev_5": {
+          "qlike": 0.5080001577923347,
+          "mae": 4.803684390315708,
+          "rmse": 6.377409831522813
+        },
+        "rv_21": {
+          "qlike": 0.5097555670839974,
+          "mae": 5.165512530181174,
+          "rmse": 5.876408568211996
+        },
+        "ewma": {
+          "qlike": 0.5401923600005264,
+          "mae": 5.452333821359093,
+          "rmse": 5.9025587721333
+        },
+        "har": {
+          "qlike": 0.3861356018195867,
+          "mae": 3.915848797397038,
+          "rmse": 4.55432436646045
+        },
+        "hgb": {
+          "qlike": 0.24105257336541974,
+          "mae": 2.587784460345594,
+          "rmse": 3.257802666454786
+        }
+      }
+    },
+    "medium": {
+      "rows": 118,
+      "models": {
+        "prev_5": {
+          "qlike": 0.33931784672739035,
+          "mae": 2.971832664580067,
+          "rmse": 3.6985731503336545
+        },
+        "rv_21": {
+          "qlike": 0.1477355690186558,
+          "mae": 2.8271515446498965,
+          "rmse": 3.682569291861305
+        },
+        "ewma": {
+          "qlike": 0.10100041450441502,
+          "mae": 2.3778313698020628,
+          "rmse": 2.986856053971097
+        },
+        "har": {
+          "qlike": 0.09548140449730441,
+          "mae": 1.920311341225283,
+          "rmse": 2.336715037609873
+        },
+        "hgb": {
+          "qlike": 0.1701416834437166,
+          "mae": 2.4740983096787947,
+          "rmse": 2.947561556305552
+        }
+      }
+    },
+    "high": {
+      "rows": 66,
+      "models": {
+        "prev_5": {
+          "qlike": 2.0721390005347997,
+          "mae": 8.077356056328245,
+          "rmse": 10.46446077839665
+        },
+        "rv_21": {
+          "qlike": 1.1880263206974069,
+          "mae": 7.3821955890730635,
+          "rmse": 9.706941887784462
+        },
+        "ewma": {
+          "qlike": 1.0319622341508077,
+          "mae": 7.020039212397846,
+          "rmse": 9.369497425526422
+        },
+        "har": {
+          "qlike": 1.5038231805648339,
+          "mae": 8.058931163208886,
+          "rmse": 10.212491769840874
+        },
+        "hgb": {
+          "qlike": 0.9935422142223561,
+          "mae": 6.5532534037655354,
+          "rmse": 8.958185330468723
+        }
+      }
+    }
+  },
+  "diebold_mariano": {
+    "estimable": true,
+    "statistic": -1.2134912882441853,
+    "p_value": 0.22494204312277918,
+    "model_a": "hgb",
+    "model_b": "ewma",
+    "loss": "per-row QLIKE",
+    "newey_west_lag": 4,
+    "positive_statistic_means": "gradient boosting has higher loss",
+    "reference_distribution": "asymptotic standard normal, two-sided"
+  },
+  "non_overlapping_five_day_blocks": 50,
+  "final_fit_rows": 3919,
+  "forecast_policy": "Fixed HAR and HGB fits; trailing inputs update at each observed close"
+}

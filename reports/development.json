@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "data": {
+    "rows": 4244,
+    "first_date": "2010-01-04",
+    "last_date": "2026-11-16",
+    "sha256": "28a02fb5b1853aa3bc14436055fc84837a45fbfd53be70c725db4f6241670b59"
+  },
+  "settings": {
+    "min_train": 756,
+    "validation_size": 252,
+    "step": 252,
+    "gap": 5,
+    "test_size": 252,
+    "horizon": 5,
+    "lookback": 63,
+    "ewma_decay": 0.94,
+    "seed": 42,
+    "calendar_features": "weekday only",
+    "dm_lag": 4
+  },
+  "library_versions": {
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "scikit_learn": "1.9.1",
+    "yfinance": "1.8.0"
+  },
+  "implementation_sha256": "2cf39a84f07453184f9995950c72c75772ddd200673abad63a2bed5f8e111b20",
+  "feature_count": 34,
+  "splits": {
+    "modelling_rows": 4176,
+    "development_rows": 3919,
+    "development_start": "2010-04-06",
+    "development_end": "2025-10-30",
+    "purge_start": "2025-10-31",
+    "purge_end": "2025-11-06",
+    "test_start": "2025-11-07",
+    "test_end": "2026-11-09",
+    "test_rows": 252,
+    "test_label_end": "2026-11-16",
+    "fold_count": 12,
+    "development_tail_rows_outside_complete_folds": 134
+  },
+  "metric_units": {
+    "qlike": "dimensionless loss on variance",
+    "mae": "annualised volatility percentage points",
+    "rmse": "annualised volatility percentage points"
+  },
+  "selection_metric": "mean development QLIKE",
+  "candidate_grid": [
+    {
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 8,
+      "min_samples_leaf": 20
+    },
+    {
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 8,
+      "min_samples_leaf": 50
+    },
+    {
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 16,
+      "min_samples_leaf": 20
+    },
+    {
+      "learning_rate": 0.03,
+      "max_iter": 100,
+      "max_leaf_nodes": 16,
+      "min_samples_leaf": 50
+    },
+    {
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 8,
+      "min_samples_leaf": 20
+    },
+    {
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 8,
+      "min_samples_leaf": 50
+    },
+    {
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 16,
+      "min_samples_leaf": 20
+    },
+    {
+      "learning_rate": 0.03,
+      "max_iter": 300,
+      "max_leaf_nodes": 16,
+      "min_samples_leaf": 50
+    },
+    {
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 8,
+      "min_samples_leaf": 20
+    },
+    {
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 8,
+      "min_samples_leaf": 50
+    },
+    {
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 16,
+      "min_samples_leaf": 20
+    },
+    {
+      "learning_rate": 0.1,
+      "max_iter": 100,
+      "max_leaf_nodes": 16,
+      "min_samples_leaf": 50
+    },
+    {
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 8,
+      "min_samples_leaf": 20
+    },
+    {
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 8,
+      "min_samples_leaf": 50
+    },
+    {
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 16,
+      "min_samples_leaf": 20
+    },
+    {
+      "learning_rate": 0.1,
+      "max_iter": 300,
+      "max_leaf_nodes": 16,
+      "min_samples_leaf": 50
+    }
+  ],
+  "chosen_parameters": {
+    "learning_rate": 0.03,
+    "max_iter": 100,
+    "max_leaf_nodes": 16,
+    "min_samples_leaf": 50
+  },
+  "fold_means": {
+    "ewma": {
+      "qlike": 0.5574374535739762,
+      "rmse": 7.8928093230147445,
+      "mae": 5.515999086087359
+    },
+    "har": {
+      "qlike": 0.6562531731602442,
+      "rmse": 7.610207756059963,
+      "mae": 4.9282177966113645
+    },
+    "hgb": {
+      "qlike": 0.539333972656433,
+      "rmse": 7.228647735056121,
+      "mae": 4.615635204355369
+    },
+    "prev_5": {
+      "qlike": 1.0653813491542397,
+      "rmse": 8.177143191388268,
+      "mae": 5.6361512632337005
+    },
+    "rv_21": {
+      "qlike": 0.6463232964700761,
+      "rmse": 8.159383624000903,
+      "mae": 5.61395509030697
+    }
+  },
+  "best_baseline_by_development_qlike": "ewma",
+  "win_counts": {
+    "folds": 12,
+    "hgb_vs_ewma": 8,
+    "hgb_vs_best_baseline_in_each_fold": 8
+  },
+  "regime_cutoffs": {
+    "low_upper": 0.08733802306505907,
+    "medium_upper": 0.14999844822451774
+  }
+}
